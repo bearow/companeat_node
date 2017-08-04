@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./docker/dev
+      dockerfile: Dockerfile
+    ports:
+      - 7331:1337
+    volumes:
+      - "./companeat:/project"
+      - db_dir:/database
+    tty: true
+    stdin_open: true
+
+  mongo_db:
+    container_name: database
+    image: mongo:3.0
+    volumes:
+      - db_dir:/database
+    tty: true
+    stdin_open: true
+
+
+volumes:
+  db_dir: {}

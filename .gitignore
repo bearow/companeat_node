@@ -7,7 +7,7 @@ yarn-error.log*
 
 # Runtime data
 pids
-*.pid
+*.pidr
 *.seed
 *.pid.lock
 
@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+#IDE config files
+.idea
